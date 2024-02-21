@@ -1,0 +1,13 @@
+const Web3 = require('web3');
+
+const url = 'https://rpc.ankr.com/eth/b6d15c9349c08c6cb163ea23a6e0cc7d94664381ff63381f5e37f6c04109e26d'  // url string
+
+const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getBlockNumber((error, blockNumber) => {
+    if(!error) {
+        console.log(blockNumber);
+    } else {
+        console.log(error);
+    }
+});
